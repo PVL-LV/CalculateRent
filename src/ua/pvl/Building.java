@@ -3,26 +3,13 @@ package ua.pvl;
 
 public abstract class Building {
 
-    private String address;
+    public String address;
+    public double square;
 
-    public Building(String address) {
+    public Building(String address, double square) {
         this.address = address;
+        this.square = square;
     }
 
-    public double square = getSquare();
-
-    private double getSquare() {
-        //get square
-        return 0;
-    }
-
-    public double basicRent = getBasicRent();
-
-    public double getBasicRent() {
-        // get basic rent
-        return 0;
-    }
-
-    public abstract double calcRent(double basicRent, double square);
-
+    public abstract double calcRent(double basicRent);
 }
