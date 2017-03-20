@@ -21,7 +21,20 @@ public class TestCalcRent {
                 rent += b.calcRent(basicRent);
             }
         }
-        System.out.println(rent);
-    }
+        System.out.println("Total rent cost for privat houses with less than 100 sq.m = " + rent);
 
+        for(Building b : buildings) {
+            if(!(b instanceof PrivateHouse)){
+                rent += b.calcRent(basicRent);
+            }
+        }
+        System.out.println("Rent cost for all shops, offices and hospitals = " + rent);
+
+        for (Building b : buildings) {
+            if (b.square < 100 && b instanceof PrivateHouse) {
+                rent += b.calcRent(basicRent);
+            }
+        }
+        System.out.println("Total rent cost for privat houses with more than 100 sq.m = " + rent);
+    }
 }
